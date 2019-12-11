@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="jumbotron">
+    <center>
+        <h2> Bienvenidos  a ContactApp - Tu Mundo de Contactos</h2>
+
+    </center>
+  
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("Visitas","Index", "Visitas")</h2>
+        <p>
+            Visitas Totales.
+        </p>
+        <p><a class="btn btn-default" href="http://localhost:64813/Visitas">Ver &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("Miembros", "Index", "Miembroes")</h2>
+        <p>Miembros Totales</p>
+        <p><a class="btn btn-default" href="http://localhost:64813/Miembroes">Ver &raquo;</a></p>
+    </div>
+   
+</div>

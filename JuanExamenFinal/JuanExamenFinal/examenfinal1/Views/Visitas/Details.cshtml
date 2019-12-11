@@ -1,0 +1,66 @@
+﻿@model examenfinal1.Models.Visita
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Visita</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.motivo_visita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.motivo_visita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_completo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_completo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.h_entrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.h_entrada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.h_salida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.h_salida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.m_recibio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.m_recibio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Miembro.m_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Miembro.m_nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idVisita }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ContactosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Miembro">
+    <Key>
+      <PropertyRef Name="idMiembro" />
+    </Key>
+    <Property Name="idMiembro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="m_nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="m_apellido" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Visitas" Relationship="Self.FK__Visitas__idMiemb__1273C1CD" FromRole="Miembros" ToRole="Visitas" />
+  </EntityType>
+  <EntityType Name="Visita">
+    <Key>
+      <PropertyRef Name="idVisita" />
+    </Key>
+    <Property Name="idVisita" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="motivo_visita" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="nombre_completo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="h_entrada" Type="DateTime" Precision="3" />
+    <Property Name="h_salida" Type="DateTime" Precision="3" />
+    <Property Name="m_recibio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="idMiembro" Type="Int32" />
+    <NavigationProperty Name="Miembro" Relationship="Self.FK__Visitas__idMiemb__1273C1CD" FromRole="Visitas" ToRole="Miembros" />
+  </EntityType>
+  <Association Name="FK__Visitas__idMiemb__1273C1CD">
+    <End Role="Miembros" Type="Self.Miembro" Multiplicity="0..1" />
+    <End Role="Visitas" Type="Self.Visita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Miembros">
+        <PropertyRef Name="idMiembro" />
+      </Principal>
+      <Dependent Role="Visitas">
+        <PropertyRef Name="idMiembro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ContactosEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Miembros" EntityType="Self.Miembro" />
+    <EntitySet Name="Visitas" EntityType="Self.Visita" />
+    <AssociationSet Name="FK__Visitas__idMiemb__1273C1CD" Association="Self.FK__Visitas__idMiemb__1273C1CD">
+      <End Role="Miembros" EntitySet="Miembros" />
+      <End Role="Visitas" EntitySet="Visitas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

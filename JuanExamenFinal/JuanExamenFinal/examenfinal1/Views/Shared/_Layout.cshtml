@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title Contact App - Tu Mundo</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper #8e24aa purple darken-1
+" >
+            <div class="container">
+                <a href="http://localhost:64813/" class="navbar-brand" id="name">ContactApp</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Visitas", "Index", "Visitas")</li>
+                    <li>@Html.ActionLink("Miembros", "Index", "Miembroes")</li>
+                </ul>
+             </div>
+        </div>
+    </nav>
+    
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer class="page-footer #8e24aa purple darken-1">
+            <div class="container">
+                <div class="row">
+                   
+
+                        <div class="col l6 s12">
+                            <p class="black-text text-darken-2">By - Juan Manuel Urena - 2018-6080</p>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    <center>
+                        <span class="black-text text-darken-2">© 2019 Copyright ContactApp</span>
+
+                    </center>
+                </div>
+                    
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

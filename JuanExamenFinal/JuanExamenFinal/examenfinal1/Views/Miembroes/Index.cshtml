@@ -1,0 +1,39 @@
+﻿@model IEnumerable<examenfinal1.Models.Miembro>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <p>Nombre</p>
+        </th>
+        <th>
+            <p>Apellido</p>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.m_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.m_apellido)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idMiembro }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.idMiembro }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idMiembro })
+        </td>
+    </tr>
+}
+
+</table>
